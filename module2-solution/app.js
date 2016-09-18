@@ -13,7 +13,7 @@ function ToBuyShoppingController(ShoppingListCheckOffService) {
   list.items = ShoppingListCheckOffService.getToBuyItems();
   
   list.isEmpty = function() {
-    return (list.items.length == 0);
+    return (list.items.length === 0);
   }
 
   list.buyItem = function (itemIndex) {
@@ -28,7 +28,7 @@ function AlreadyBoughtShoppingController(ShoppingListCheckOffService) {
   cart.items = ShoppingListCheckOffService.getBoughtItems();
   
   cart.isEmpty = function() {
-    return (cart.items.length == 0);
+    return (cart.items.length === 0);
   }
 }
 
@@ -46,8 +46,7 @@ function ShoppingListCheckOffService() {
   var boughtItems = [];
 
   service.buyItem = function (itemIndex) {
-    var item = toBuyItems[itemIndex];
-    toBuyItems.splice(itemIndex, 1);
+    var item = toBuyItems.splice(itemIndex, 1)[0];
     boughtItems.push(item);
   };
 

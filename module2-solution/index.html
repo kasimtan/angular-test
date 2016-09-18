@@ -11,8 +11,9 @@
       li {
         margin-bottom: 7px;
       }
-      li > button {
-        margin-left: 6px;
+      li > span {
+        width: 150px;
+        display: inline-block;
       }
     </style>
   </head>
@@ -26,7 +27,7 @@
         <h2>To Buy:</h2>
         <ul>
           <li ng-repeat="item in list.items">
-            Buy {{ item.quantity }} {{ item.name }}
+            <span>Buy {{ item.quantity }} {{ item.name }}</span>
             <button ng-click="list.buyItem($index)" class="btn btn-default">
               <span class="glyphicon glyphicon-ok text-success"></span> Bought
             </button>
