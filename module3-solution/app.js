@@ -33,11 +33,11 @@ function ItemsLoaderIndicatorDirective() {
 
 function ItemsLoaderIndicatorDirectiveController() { }
 
-NarrowItDownController.$inject = ['$scope', 'MenuSearchService'];
-function NarrowItDownController($scope, MenuSearchService) {
+NarrowItDownController.$inject = ['MenuSearchService'];
+function NarrowItDownController(MenuSearchService) {
   var list = this;
 
-  $scope.searchTerm = "";
+  list.searchTerm = "";
 
   var loadMenu = function (searchTerm) {
     list.isLoading = true;
@@ -49,7 +49,7 @@ function NarrowItDownController($scope, MenuSearchService) {
   };
 
   list.narrowDown = function () {
-    var searchTerm = $scope.searchTerm;
+    var searchTerm = list.searchTerm;
     if (searchTerm.trim() == "") list.found = [];
     else loadMenu(searchTerm);
   };
