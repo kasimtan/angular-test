@@ -20,5 +20,8 @@
         <div class="text-nowrap"><span class="text-muted">{{ item.large_portion_name }}</span> {{ item.price_large | currency }}</div>
       </td>
     </tr>
+    <tr ng-if="itemsList.items.length == 0">
+      <td colspan="4" class="text-danger">Nothing found</td>
+    </tr>
   </tbody>
 </table>

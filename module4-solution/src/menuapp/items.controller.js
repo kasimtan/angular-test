@@ -8,7 +8,7 @@ ItemsListController.$inject = ['items'];
 function ItemsListController(items) {
   var list = this;
   list.items = items.menu_items;
-  list.category = items.category.name;
+  list.category = (! items.category) ? 'Unknown' : items.category.name;
 }
 
 })();
