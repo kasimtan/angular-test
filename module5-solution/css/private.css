@@ -1,0 +1,22 @@
+.form {
+    margin: 0 auto;
+    padding-top: 10px;
+    width: 400px;
+}
+
+.table th {
+  min-width: 150px;
+}
+
+.menu-item-photo {
+  border-radius: 10px;
+}
+
+.ng-touched.ng-valid:not(.has-error) {
+  border: 1px green solid;
+}
+
+.ng-touched.ng-invalid,
+.has-error, .has-error:focus {
+  border: 1px red solid;
+}

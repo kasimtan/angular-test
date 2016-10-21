@@ -1,0 +1,43 @@
+<div class="container">
+  <h2 class="text-center">My Registration Info</h2>
+  <div class="form" ng-if="!myInfoCtrl.isRegistered">
+    <div class="alert alert-danger text-center">
+      <h3 class="well">Not Signed Up Yet!</h3>
+      <a class="btn btn-success" ui-sref="my.signup">Sign Up Now!</a>
+    </div>
+  </div>
+  <div class="row" ng-if="myInfoCtrl.isRegistered">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <th>First Name:</th>
+            <td>{{ myInfoCtrl.user.first_name }}</td>
+          </tr>
+          <tr>
+            <th>Last Name:</th>
+            <td>{{ myInfoCtrl.user.last_name }}</td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td>{{ myInfoCtrl.user.email }}</td>
+          </tr>
+          <tr>
+            <th>Phone:</th>
+            <td>{{ myInfoCtrl.user.phone }}</td>
+          </tr>
+          <tr>
+            <th>Favorite Dish:</th>
+            <td>
+              <h4>{{ myInfoCtrl.user.menu_item.name }}</h4>
+              <p>{{ myInfoCtrl.user.menu_item.description }}</p>
+              <img class="menu-item-photo" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.user.menu_item.short_name}}.jpg" alt="{{myInfoCtrl.user.menu_item.name}}">
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
